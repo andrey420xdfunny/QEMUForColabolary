@@ -1,7 +1,8 @@
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip -o ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 rm -rf ngrok-stable-linux-amd64.zip
-./ngrok authtoken 29B3jxxnJa5wf0GMuqn4TzB8LzQ_2BLCxLxH57fa3NsbKZwRk 
+read -p "Paste authtoken here (Copy and Ctrl+V to paste then press Enter): " CRP
+./ngrok authtoken $CRP 
 nohup ./ngrok tcp --region ap 5900 &>/dev/null &
 sudo apt-get update && apt-get install qemu -y
 sudo apt install qemu-utils -y
